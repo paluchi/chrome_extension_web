@@ -81,32 +81,61 @@
             transform: scale(1.05);
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
         }
+         #instructions {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        #instructions h2 {
+            color: #128c7e;
+        }
+        #instructions ol {
+            padding-left: 20px;
+        }
+        #instructions li {
+            margin-bottom: 10px;
+        }
+        a {
+            color: #128c7e;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to the WhatsApp Casino Tool Extension</h1>
+        <h1>Bienvenido a la Extensión de la Herramienta de Casino de WhatsApp</h1>
     </header>
     <main>
-        <section id="instructions">
-            <h2>Installation Instructions</h2>
-            <ol>
-                <li>Open downloads.</li>
-                <li>Click download file.</li>
-                <li>Accept "download from unknown source" (it'll be detected as a possible virus).</li>
-                <li>Place the downloaded file in a secure place (Documents, Desktop, etc).</li>
-                <li>Go to Chrome's extensions page, enable Developer Mode, and click "Load unpacked extension".</li>
-                <li>Click the extension icon.</li>
-                <li>Add API key and secret.</li>
-                <li>Open WhatsApp.</li>
-            </ol>
-        </section>
         <section id="current-page">
-            <h2>About This Extension</h2>
-            <p>This page provides updates for the WhatsApp Casino Tool Extension.</p>
-            <h2>Download and Install</h2>
-            <p>To install this extension, please click the button below to download the latest version and manually drag it into the Chrome extensions page.</p>
-            <button onclick="installExtension()">Install Last Version</button>
+            <h2>Sobre Esta Extensión</h2>
+            <p>Esta página proporciona actualizaciones para la Extensión de la Herramienta de Casino de WhatsApp.</p>
+            <h2>Descargar e Instalar</h2>
+            <p>Para instalar esta extensión, haga clic en el botón de abajo para descargar la última versión y arrástrela manualmente a la página de extensiones de Chrome.</p>
+            <button onclick="installExtension()">Instalar Última Versión</button>
+        </section>
+        
+         <section id="instructions">
+            <h2>Instrucciones de Instalación</h2>
+            <ol>
+                <li>Abra la carpeta de descargas.</li>
+                <li>Acepte "descargar desde una fuente desconocida" (será detectado como un posible virus).</li>
+                <li>Habra carpeta contenedora del arcivo.</li>
+                <li>Extraiga el archivo ZIP haciendo doble clic.</li>
+                <li>Coloque la carpeta extraída en un lugar seguro (Documentos, Escritorio, etc.).</li>
+                <li>Vaya a la página de <a href="chrome://extensions/" target="_blank">extensiones de Chrome</a>.</li>
+                <li>Habilite el modo de desarrollador arriba a la derecha.</li>
+                <li>Haga clic en "Cargar extensión descomprimida" arriba a la izquierda.</li>
+                <li>Seleccione la carpeta que descomprimio previamente y coloco en un lugar seguro.</li>
+                <li>Acepte</li>
+                <li>Ahora la extension está cargada y lista para usarte.</li>
+                <li>Haga clic en el icono de la extensión.</li>
+                <li>Agregue la clave API y el secreto.</li>
+                <li>Abra WhatsApp y recargue la pagina.</li>
+                <li>Siga instrucciones.</li>
+                <li>Listo! Ya puede operar.</li>
+            </ol>
         </section>
     </main>
     <footer>
