@@ -1,191 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WhatsApp Casino Tool Extension</title>
     <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-        body {
-            display: flex;
-            flex-direction: column;
-        }
-        header {
-            background-color: #128c7e;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-        header, footer {
-            flex-shrink: 0;
-        }
-        main {
-            flex-grow: 1;
-            padding: 20px;
-            text-align: center;
-        }
-        footer {
-            background-color: #25d366;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-        button {
-            box-sizing: border-box;
-            width: 80%;
-            height: 60px;
-            padding: 8px 15px;
-            margin-top: 20px;
-            background: linear-gradient(45deg, #25d366, #128c7e);
-            border: none;
-            border-radius: 5px;
-            color: #fff;
-            font-size: 18px;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        button::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-            transition: all 0.5s;
-            border-radius: 5px;
-        }
-        button:hover::before {
-            left: 100%;
-        }
-        button::after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background: inherit;
-            filter: blur(8px);
-            z-index: -1;
-        }
-        button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
-        }
-        #instructions {
-            margin-top: 600px;
-            text-align: left;
-            margin-bottom: 20px;
-        }
-        #instructions h2 {
-            color: #128c7e;
-        }
-        #instructions ol {
-            padding-left: 20px;
-        }
-        #instructions li {
-            margin-bottom: 20px;
-            list-style-type: none;
-        }
-        #instructions li::before {
-            content: attr(data-title);
-            font-weight: bold;
-            display: block;
-            margin-bottom: 5px;
-            color: #128c7e;
-        }
-        #instructions img {
-            display: block;
-            margin: 10px auto;
-            max-width: 100%;
-            height: auto;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        a {
-            color: #128c7e;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      header {
+        background-color: #128c7e;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+      }
+      header,
+      footer {
+        flex-shrink: 0;
+      }
+      main {
+        flex-grow: 1;
+        padding: 20px;
+        text-align: center;
+      }
+      footer {
+        background-color: #25d366;
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+      }
+      button {
+        box-sizing: border-box;
+        width: 80%;
+        height: 60px;
+        padding: 8px 15px;
+        margin-top: 20px;
+        background: linear-gradient(45deg, #25d366, #128c7e);
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+      button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          120deg,
+          transparent,
+          rgba(255, 255, 255, 0.4),
+          transparent
+        );
+        transition: all 0.5s;
+        border-radius: 5px;
+      }
+      button:hover::before {
+        left: 100%;
+      }
+      button::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: inherit;
+        filter: blur(8px);
+        z-index: -1;
+      }
+      button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+      }
+      #instructions {
+        margin-top: 600px;
+        text-align: left;
+        margin-bottom: 20px;
+      }
+      #instructions h2 {
+        color: #128c7e;
+      }
+      #instructions ol {
+        padding-left: 20px;
+      }
+      #instructions li {
+        margin-bottom: 20px;
+        list-style-type: none;
+      }
+      #instructions li::before {
+        content: attr(data-title);
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+        color: #128c7e;
+      }
+      #instructions img {
+        display: block;
+        margin: 10px auto;
+        max-width: 100%;
+        height: auto;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      a {
+        color: #128c7e;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>Bienvenido a la Extensión de la Herramienta de Casino de WhatsApp</h1>
+      <h1>Bienvenido a la Extensión de la Herramienta de Casino de WhatsApp</h1>
     </header>
     <main>
-        <section id="current-page">
-            <h2>Sobre Esta Extensión</h2>
-            <p>Esta página proporciona actualizaciones para la Extensión de la Herramienta de Casino de WhatsApp.</p>
-            <h2>Descargar e Instalar</h2>
-            <p>Para instalar esta extensión, haga clic en el botón de abajo para descargar la última versión y arrástrela manualmente a la página de extensiones de Chrome.</p>
-            <button onclick="installExtension()">Descargar Última Versión</button>
-        </section>
-        
-<section id="instructions">
-    <h2>Instrucciones de Instalación</h2>
-    <ol>
-        <li data-title="1. Precione 'Descargar Última Versión'.">
-        </li>
-        <li data-title="2. Abra la carpeta contenedora del archivo.">
-            <img src="assets/open_download_container.png" alt="Carpeta contenedora del archivo" />
-        </li>
-        <li data-title="3. Extraiga el archivo ZIP haciendo doble clic.">
-        </li>
-        <li data-title="4. Coloque la carpeta extraída en un lugar seguro (Documentos, Escritorio, etc.).">
-        </li>
-        <li data-title="5. Vaya a la página de extensiones de Chrome.">
-            <a href="chrome://extensions/" target="_blank">chrome://extensions/</a>
-            <img src="assets/extensions.png" alt="Página de extensiones de Chrome" />
-        </li>
-        <li data-title="6. Habilite el modo de desarrollador arriba a la derecha.">
-        </li>
-        <li data-title="7. Haga clic en 'Cargar extensión descomprimida' arriba a la izquierda.">
-        </li>
-        <li data-title="8. Seleccione la carpeta que descomprimió previamente y colocó en un lugar seguro.">
-            <img src="assets/load.png" alt="Seleccionar carpeta descomprimida" />
-        </li>
-        <li data-title="9. Acepte.">
-        </li>
-        <li data-title="10. Ahora la extensión está cargada y lista para usar.">
-        </li>
-        <li data-title="11. Haga clic en el icono de la extensión.">
-            <img src="assets/click_ext.png" alt="Icono de la extensión" />
-        </li>
-        <li data-title="12. Agregue la clave API y el secreto.">
-            <img src="assets/complete_ext.png" alt="Agregar clave API y secreto" />
-        </li>
-        <li data-title="13. Abra WhatsApp y recargue la página.">
-        </li>
-        <li data-title="14. Siga instrucciones.">
-        </li>
-        <li data-title="15. ¡Listo! Ya puede operar.">
-            <img src="path_to_image_15.jpg" alt="Listo para operar" />
-        </li>
-    </ol>
-</section>
+      <section id="current-page">
+        <h2>Sobre Esta Extensión</h2>
+        <p>
+          Esta página proporciona actualizaciones para la Extensión de la
+          Herramienta de Casino de WhatsApp.
+        </p>
+        <h2>Descargar e Instalar</h2>
+        <p>
+          Para instalar esta extensión, haga clic en el botón de abajo para
+          descargar la última versión y arrástrela manualmente a la página de
+          extensiones de Chrome.
+        </p>
+        <button onclick="installExtension()">Descargar Última Versión</button>
+      </section>
 
+      <section id="instructions">
+        <h2>Instrucciones de Instalación</h2>
+        <ol>
+          <li
+            data-title="1 Si no es la primera vez que instala la herramienta elimine la versión anterior."
+          >
+            <img src="assets/delete.png" alt="Elimine la versión anterior" />
+          </li>
+          <li data-title="2 Precione 'Descargar Última Versión'."></li>
+          <li data-title="3 Abra la carpeta contenedora del archivo.">
+            <img
+              src="assets/open_download_container.png"
+              alt="Carpeta contenedora del archivo"
+            />
+          </li>
+          <li data-title="4 Extraiga el archivo ZIP haciendo doble clic."></li>
+          <li
+            data-title="5 Coloque la carpeta extraída en un lugar seguro (Documentos, Escritorio, etc.)."
+          ></li>
+          <li data-title="6 Vaya a la página de extensiones de Chrome.">
+            <a href="chrome://extensions/" target="_blank"
+              >chrome://extensions/</a
+            >
+            <img
+              src="assets/extensions.png"
+              alt="Página de extensiones de Chrome"
+            />
+          </li>
+          <li
+            data-title="7 Habilite el modo de desarrollador arriba a la derecha."
+          ></li>
+          <li
+            data-title="8 Haga clic en 'Cargar extensión descomprimida' arriba a la izquierda."
+          ></li>
+          <li
+            data-title="9 Seleccione la carpeta que descomprimió previamente y colocó en un lugar seguro."
+          >
+            <img
+              src="assets/load.png"
+              alt="Seleccionar carpeta descomprimida"
+            />
+          </li>
+          <li data-title="10 Acepte."></li>
+          <li
+            data-title="11. Ahora la extensión está cargada y lista para usar."
+          ></li>
+          <li data-title="12. Haga clic en el icono de la extensión.">
+            <img src="assets/click_ext.png" alt="Icono de la extensión" />
+          </li>
+          <li data-title="13. Agregue la clave API y el secreto.">
+            <img
+              src="assets/complete_ext.png"
+              alt="Agregar clave API y secreto"
+            />
+          </li>
+          <li data-title="14. Abra WhatsApp y recargue la página."></li>
+          <li data-title="15. Siga instrucciones."></li>
+          <li data-title="16. ¡Listo! Ya puede operar.">
+            <img src="path_to_image_15.jpg" alt="Listo para operar" />
+          </li>
+        </ol>
+      </section>
     </main>
     <footer>
-        <p>Copyright © 2023</p>
+      <p>Copyright © 2023</p>
     </footer>
 
     <script>
-        function installExtension() {
-            window.open('https://link.storjshare.io/s/juqfapcwfylvdzi43l2oplaz5eza/casino%2Fcasino_chrome_extension.zip?download=1', '_blank');
-            document.getElementById('instructions').scrollIntoView({ behavior: 'smooth' });
-        }
+      function installExtension() {
+        window.open(
+          "https://link.storjshare.io/s/juqfapcwfylvdzi43l2oplaz5eza/casino%2Fcasino_chrome_extension.zip?download=1",
+          "_blank"
+        );
+        document
+          .getElementById("instructions")
+          .scrollIntoView({ behavior: "smooth" });
+      }
     </script>
-</body>
+  </body>
 </html>
