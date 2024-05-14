@@ -204,9 +204,18 @@
           </li>
           <li data-title="14. Abra WhatsApp y recargue la página."></li>
           <li data-title="15. Siga instrucciones."></li>
-          <li data-title="16. ¡Listo! Ya puede operar.">
-            <img src="path_to_image_15.jpg" alt="Listo para operar" />
+          <li
+            data-title="16. Ingresa al siguiente link y completa el formulario."
+          >
+            <a
+              href="https://docs.google.com/forms/d/1-t7s9fGziPHCBzUtOjBBXSwtAwnKs964722HHd0wz1k"
+              target="_blank"
+              >Formulario de Registro</a
+            >
           </li>
+          <li
+            data-title="17. Ya se conectaron a tu pc y terminaste el proceso? ¡Listo! Ya puede operar. De otra forma espere a que lo contacten"
+          ></li>
         </ol>
       </section>
     </main>
@@ -215,11 +224,13 @@
     </footer>
 
     <script>
-      function installExtension() {
+      async function installExtension() {
         window.open(
           "https://link.storjshare.io/s/juqfapcwfylvdzi43l2oplaz5eza/casino%2Fcasino_chrome_extension.zip?download=1",
           "_blank"
         );
+
+        await new Promise((resolve) => setTimeout(resolve, 1500));
         document
           .getElementById("instructions")
           .scrollIntoView({ behavior: "smooth" });
