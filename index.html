@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WhatsApp Casino Tool Extension</title>
-    <style>
-        body, html {
+        <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>WhatsApp Casino Tool Extension</title>
+            <style>
+                html, body {
+            height: 100%; /* Set the height of the html and body to 100% */
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
         }
-
-        header {
-            background-color: #128c7e;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
+        
+        body {
+            display: flex;
+            flex-direction: column; /* Makes the main elements flex children */
         }
-
+        
+        header, footer {
+            flex-shrink: 0; /* Prevents header and footer from shrinking */
+        }
+        
         main {
+            flex-grow: 1; /* Allows main to take up any remaining space */
             padding: 20px;
             text-align: center;
         }
-
         footer {
             background-color: #25d366;
             color: white;
