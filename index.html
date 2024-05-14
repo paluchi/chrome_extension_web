@@ -81,7 +81,7 @@
             transform: scale(1.05);
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
         }
-         #instructions {
+        #instructions {
             text-align: left;
             margin-bottom: 20px;
         }
@@ -92,7 +92,23 @@
             padding-left: 20px;
         }
         #instructions li {
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+            list-style-type: none;
+        }
+        #instructions li::before {
+            content: attr(data-title);
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #128c7e;
+        }
+        #instructions img {
+            display: block;
+            margin: 10px auto;
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
         }
         a {
             color: #128c7e;
@@ -113,30 +129,52 @@
             <p>Esta página proporciona actualizaciones para la Extensión de la Herramienta de Casino de WhatsApp.</p>
             <h2>Descargar e Instalar</h2>
             <p>Para instalar esta extensión, haga clic en el botón de abajo para descargar la última versión y arrástrela manualmente a la página de extensiones de Chrome.</p>
-            <button onclick="installExtension()">Instalar Última Versión</button>
+            <button onclick="installExtension()">Descargar Última Versión</button>
         </section>
         
-         <section id="instructions">
-            <h2>Instrucciones de Instalación</h2>
-            <ol>
-                <li>Abra la carpeta de descargas.</li>
-                <li>Acepte "descargar desde una fuente desconocida" (será detectado como un posible virus).</li>
-                <li>Habra carpeta contenedora del arcivo.</li>
-                <li>Extraiga el archivo ZIP haciendo doble clic.</li>
-                <li>Coloque la carpeta extraída en un lugar seguro (Documentos, Escritorio, etc.).</li>
-                <li>Vaya a la página de <a href="chrome://extensions/" target="_blank">extensiones de Chrome</a>.</li>
-                <li>Habilite el modo de desarrollador arriba a la derecha.</li>
-                <li>Haga clic en "Cargar extensión descomprimida" arriba a la izquierda.</li>
-                <li>Seleccione la carpeta que descomprimio previamente y coloco en un lugar seguro.</li>
-                <li>Acepte</li>
-                <li>Ahora la extension está cargada y lista para usarte.</li>
-                <li>Haga clic en el icono de la extensión.</li>
-                <li>Agregue la clave API y el secreto.</li>
-                <li>Abra WhatsApp y recargue la pagina.</li>
-                <li>Siga instrucciones.</li>
-                <li>Listo! Ya puede operar.</li>
-            </ol>
-        </section>
+<section id="instructions">
+    <h2>Instrucciones de Instalación</h2>
+    <ol>
+        <li data-title="1. Precione 'Descargar Última Versión'.">
+        </li>
+        <li data-title="2. Abra la carpeta contenedora del archivo.">
+            <img src="assets/open_download_container.png" alt="Carpeta contenedora del archivo" />
+        </li>
+        <li data-title="3. Extraiga el archivo ZIP haciendo doble clic.">
+        </li>
+        <li data-title="4. Coloque la carpeta extraída en un lugar seguro (Documentos, Escritorio, etc.).">
+        </li>
+        <li data-title="5. Vaya a la página de extensiones de Chrome.">
+            <a href="chrome://extensions/" target="_blank">chrome://extensions/</a>
+            <img src="assets/extensions.png" alt="Página de extensiones de Chrome" />
+        </li>
+        <li data-title="6. Habilite el modo de desarrollador arriba a la derecha.">
+        </li>
+        <li data-title="7. Haga clic en 'Cargar extensión descomprimida' arriba a la izquierda.">
+        </li>
+        <li data-title="8. Seleccione la carpeta que descomprimió previamente y colocó en un lugar seguro.">
+            <img src="assets/load.png" alt="Seleccionar carpeta descomprimida" />
+        </li>
+        <li data-title="9. Acepte.">
+        </li>
+        <li data-title="10. Ahora la extensión está cargada y lista para usar.">
+        </li>
+        <li data-title="11. Haga clic en el icono de la extensión.">
+            <img src="assets/click_ext.png" alt="Icono de la extensión" />
+        </li>
+        <li data-title="12. Agregue la clave API y el secreto.">
+            <img src="assets/complete_ext.png" alt="Agregar clave API y secreto" />
+        </li>
+        <li data-title="13. Abra WhatsApp y recargue la página.">
+        </li>
+        <li data-title="14. Siga instrucciones.">
+        </li>
+        <li data-title="15. ¡Listo! Ya puede operar.">
+            <img src="path_to_image_15.jpg" alt="Listo para operar" />
+        </li>
+    </ol>
+</section>
+
     </main>
     <footer>
         <p>Copyright © 2023</p>
